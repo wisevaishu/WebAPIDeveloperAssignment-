@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.lang.reflect.Array;
 import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.List;
@@ -32,6 +31,9 @@ public class RewardController {
                 new CustomerDetails("Mohnish", 110, LocalDate.of(2025, 7, 12)),
                 new CustomerDetails("God", 45, LocalDate.of(2025, 8, 25))
         );
+
         return rewardService.calculateRewards(cd);
+
+
     }
 }

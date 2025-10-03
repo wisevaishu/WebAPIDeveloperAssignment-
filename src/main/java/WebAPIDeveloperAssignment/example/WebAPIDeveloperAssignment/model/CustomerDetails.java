@@ -2,6 +2,7 @@ package WebAPIDeveloperAssignment.example.WebAPIDeveloperAssignment.model;
 
 import java.time.LocalDate;
 
+//This class model will hold the customerdetails
 public class CustomerDetails {
     private String customerID;
     private double amount;
@@ -39,10 +40,10 @@ public class CustomerDetails {
 
     @Override
     public String toString() {
-        return "Transaction { " +
-               "ID = "+ customerID +
-               ", amount = " + amount +
-               ", date = " + date +
+        return "Transaction { \n" +
+               "ID = "+ customerID + "\n" +
+               ", amount = " + amount + "\n" +
+               ", date = " + date + "\n" +
                '}';
     }
 }

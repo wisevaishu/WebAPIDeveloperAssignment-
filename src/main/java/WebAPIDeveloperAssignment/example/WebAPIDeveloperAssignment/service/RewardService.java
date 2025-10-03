@@ -24,19 +24,24 @@ public class RewardService {
         return points;
     }
 
+
     public Map<String, Reward> calculateRewards(List<CustomerDetails> customerdetails) {
         Map<String, Reward> result =new HashMap<>();
 
+        //Loop for calculating all the customer details
         for (CustomerDetails cd : customerdetails) {
             String CustomerId = cd.getCustomerID();
             String month =cd.getDate().getMonth().toString();
 
+            //calculate each customer points
             int points = calculatePoints(cd.getAmount());
 
+            //First time entry into result list for a customer
             if (!result.containsKey(CustomerId)) {
                 result.put(CustomerId, new Reward());
             }
 
+            //will fetch the reward object to calculate monthwise points and total points of a customer
             Reward reward= result.get(CustomerId);
             reward.addPoints(month, points);
         }
